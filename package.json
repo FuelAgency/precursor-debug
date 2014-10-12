@@ -1,0 +1,20 @@
+{
+  	"id": "debug",
+	"name": "Debug",
+	"expandable": false,
+	"is_setting": true,
+	"is_hidden": false,
+	"priority": 1,
+	"version": "1.0",
+	"is_custom": false,
+	"details": {
+	    "description": "A quick and painless responsive break-point debugger."
+	},
+	"fields": [
+		{
+            "name": "fullDebug",
+            "value": true,
+            "meta": "bool"
+        }
+	]
+}

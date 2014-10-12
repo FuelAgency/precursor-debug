@@ -1,0 +1,159 @@
+//  Global settings
+	@import "../../mixins/includes";
+
+//  ==========================================================================
+//	MODULE STYLES
+//  ==========================================================================
+
+	//	Responsive Module CSS //
+	.get(@g) when (@g = true){
+		body{
+			visibility:hidden;
+		}	
+	}
+	.get(@fullDebug);
+
+//  ==========================================================================
+//	MODULE RESPONSIVE STYLES
+//  ==========================================================================
+	
+//	Mobile only styles 
+	.mobile-landscape(){
+		/* START debug style */
+		.test-row	{
+			background-color: #B991E5; /*display:none;*/ 
+			.test-message span {padding:10px; display:block;}
+			.test-message span:before	{content:"Mobile - Landscape";}
+		}
+		.get(@g) when (@g = true){
+			html{
+				&:before{content:"Mobile - Landscape"};
+				background:yellow;
+			}
+		}
+		.get(@fullDebug);
+		/* END debug style */	
+	}
+	.mobile-portrait(){
+		/* START debug style */
+		.test-row	{
+			background-color: #F09091; /*display:none;*/ 
+			.test-message span {padding:10px; display:block;}
+			.test-message span:before	{content:"Mobile - Potrait";}
+		}
+		.get(@g) when (@g = true){
+			html{
+				&:before{content:"Mobile - Potrait"};
+				background:blue;
+			}
+		}
+		.get(@fullDebug);
+		/* END debug style */
+	}
+	.mobile-all(){
+		/* START debug style */
+		.test-row-broad	{
+			background-color: #F3E1A2; /*display:none;*/ 
+			.test-message span {padding:2px 10px; display:block;}
+			.test-message span:before	{content:"Mobiles - ALL";}
+		}
+		/* END debug style */
+	}
+
+//	Tablet only styles
+	.tablet-landscape(){
+		/* START debug style */
+		.test-row	{
+			background-color: #D3EFAF; /*display:none;*/ 
+			.test-message span {padding:10px; display:block;}
+			.test-message span:before	{content:"Tablet - Landscape";}
+		}
+		.get(@g) when (@g = true){
+			html{
+				&:before{content:"Tablet - Landscape"};
+				background:orange;
+			}
+		}
+		.get(@fullDebug);
+		/* END debug style */
+	}
+	.tablet-portrait(){
+		/* START debug style */
+		.test-row	{
+			background-color: #A3E4BC; /*display:none;*/ 
+			.test-message span {padding:10px; display:block;}
+			.test-message span:before	{content:"Tablet - Portrait";}
+		}
+		.get(@g) when (@g = true){
+			html{
+				&:before{content:"Tablet - Portrait"};
+				background:grey;
+			}
+		}
+		.get(@fullDebug);
+		/* END debug style */
+	}
+	.tablet-all(){
+		/* START debug style */
+		.test-row-broad	{
+				background-color: #A9EAED; /*display:none;*/ 
+				.test-message span {padding:2px 10px; display:block;}
+			.test-message span:before	{content:"Tablets - ALL";}
+		}
+		/* END debug style */
+	}
+
+//	Desktop only styles
+	.desktop(){
+		/* START debug style */
+		.test-row-broad	{display:none;}
+		.test-row	{
+			background-color: #ABC6F5; /*display:none;*/ 
+			.test-message span {padding:10px; display:block;}
+			.test-message span:before	{content:"Desktop";}
+		}
+		.get(@g) when (@g = true){
+			html{
+				&:before{content:"Desktop";}
+				background:purple;
+			}
+		}
+		.get(@fullDebug);
+		/* END debug style */
+	}
+
+//  ==========================================================================
+//	DON'T EDIT BELOW
+//  ==========================================================================
+	.modResMobile(@orientation){
+		.getOrientation(@o) when (@o = landscape){
+			.mobile-landscape();
+		}
+		.getOrientation(@o) when (@o = portrait){
+			.mobile-portrait();
+		}
+		.getOrientation(@orientation);	
+		.mobile-all();
+	}
+	.modResTablet(@orientation){
+		.getOrientation(@o) when (@o = landscape){
+			.tablet-landscape();
+		}
+		.getOrientation(@o) when (@o = portrait){
+			.tablet-portrait();
+		}
+		.getOrientation(@orientation);	
+		.tablet-all();
+	}
+	.modResDesktop(){
+		.desktop();
+	}
+
+	@media @SmartphonesPortraitAndLandscape {.modResMobile(portraitandlandscape);}
+	@media @SmartphonesLandscape            {.modResMobile(landscape);}
+	@media @SmartphonesPortrait             {.modResMobile(portrait);}
+	@media @iPadPortraitAndLandscape        {.modResTablet(portraitandlandscape);}
+	@media @iPadLandscape                   {.modResTablet(landscape);}
+	@media @iPadPortrait                    {.modResTablet(portrait);}
+	@media @DesktopAndLaptop                {.modResDesktop();}
+//  ==========================================================================
