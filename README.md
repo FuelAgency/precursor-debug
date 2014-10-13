@@ -8,7 +8,7 @@ The debug module is a quick and painless responsive break-point debugger. Instal
 ## Markup
 
 ```html
-    &lt;div class=&quot;test-row&quot;&gt;&lt;/div&gt;
+    <div class="test-row"></div>
 ```
 
 ## Files
