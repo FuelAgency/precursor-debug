@@ -1,12 +1,8 @@
 {
   	"id": "debug",
 	"name": "Debug",
-	"expandable": false,
-	"is_setting": true,
-	"is_hidden": false,
-	"priority": 1,
-	"version": "1.0",
 	"is_custom": false,
+    "is_editable": true,
 	"details": {
 	    "description": "A quick and painless responsive break-point debugger."
 	},
